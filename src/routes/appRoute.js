@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import AuthRoute from "./authRoute";
 import HomeRoute from "./homeRoute";
-import { UserContext } from "../context";
 
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 

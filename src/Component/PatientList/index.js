@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import { db, logout } from "../../firebase";
-import { UserContext } from "../../context";
 import backgroundImage from "../../assets/background.jpg";
 import { FaSignOutAlt } from "react-icons/fa";
 import { LiaHospitalAltSolid } from "react-icons/lia";
@@ -11,7 +10,7 @@ import { collection, getDocs } from "firebase/firestore";
 import LoadingIndicator from "../Loading";
 
 export default function List() {
-  const { setUser } = useContext(UserContext);
+  
   const navigate = useNavigate();
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,6 +22,17 @@ export default function List() {
   }, []);
 
   useEffect(() => {
+    const filterData = () => {
+      const filtered = data.filter((item) => {
+        return (
+          item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.mobile.toLowerCase().includes(searchQuery.toLowerCase())||
+          item.place.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      });
+  
+      setFilteredData(filtered);
+    };
     filterData();
   }, [searchQuery, data]);
 
@@ -42,17 +52,7 @@ export default function List() {
     }
   };
 
-  const filterData = () => {
-    const filtered = data.filter((item) => {
-      return (
-        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.mobile.toLowerCase().includes(searchQuery.toLowerCase())||
-        item.place.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    });
 
-    setFilteredData(filtered);
-  };
 
   async function Logout() {
     try {

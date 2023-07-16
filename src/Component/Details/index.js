@@ -1,10 +1,8 @@
-import React, { Component, useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { db, logout } from "../../firebase";
-import { UserContext } from "../../context";
 import backgroundImage from "../../assets/background.jpg";
-import pro from "../../assets/prof.png";
-import hos from "../../assets/hos.jpeg";
-import { FaSignOutAlt, FaHospital } from "react-icons/fa";
+
+import { FaSignOutAlt } from "react-icons/fa";
 import { LiaHospitalAltSolid } from "react-icons/lia";
 import { BiSolidMessageSquareAdd } from "react-icons/bi";
 import { PiUserList } from "react-icons/pi";
@@ -14,14 +12,12 @@ import {
   doc,
   getDoc,
   getDocs,
-  query,
-  setDoc,
-  where,
+ 
 } from "firebase/firestore";
 import LoadingIndicator from "../Loading";
 
 export default function Details() {
-  const { setUser } = useContext(UserContext);
+
   const [data, setPdata] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -69,7 +65,7 @@ export default function Details() {
   useEffect(() => {
     getPatient(myProp);
     fetchPatientById(myProp);
-  }, []);
+  }, [myProp]);
 
   async function Logout() {
     try {

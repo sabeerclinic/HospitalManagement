@@ -1,20 +1,16 @@
-import React, { Component, useContext, useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { db, logout } from "../../firebase";
-import { UserContext } from "../../context";
 import backgroundImage from "../../assets/background.jpg";
-import pro from "../../assets/prof.png";
-import hos from "../../assets/hos.jpeg";
-import { FaSignOutAlt, FaHospital } from "react-icons/fa";
+import { FaSignOutAlt } from "react-icons/fa";
 import { LiaHospitalAltSolid } from "react-icons/lia";
 import { BiSolidMessageSquareAdd } from "react-icons/bi";
 import { PiUserList } from "react-icons/pi";
 import { useLocation, useNavigate } from "react-router-dom";
 import { collection, doc, setDoc } from "firebase/firestore";
-import CameraComponent from "../camera";
+
 
 
 export default function Diagnosis() {
-  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
   const myProp = location.state?.prop;

@@ -1,9 +1,9 @@
-import React, { Component, useContext, useState } from 'react'
+import React, { useState } from 'react'
 import backgroundImage from '../../assets/background.jpg'
 import hos from '../../assets/hos.jpeg'
 import pic from '../../assets/pic.jpeg'
-import app, { auth, login } from '../../firebase';
-import { UserContext } from '../../context';
+import  { auth, login } from '../../firebase';
+
 
 
 export default function Login(){
@@ -30,7 +30,7 @@ export default function Login(){
             <div className="flex ">
                <div  className="min-w-[44%] min-h-[90%] max-w-[40%] max-h-[90%] mr-10  mb-10 border-r-[3.5px]
                 border-black">
-                   <img src={pic} className=" rounded-3xl p-5 " />
+                   <img src={pic} className=" rounded-3xl p-5 " alt='fail to load'/>
                 
                    <div className="flex gap-2 ml-5 mb-5 flex-col lg:flex-row ">
                      <h1 className="lg:text-2xl  md:text-xl sm:text-sm  font-serif text-[#00008B]"> DR. MOHAMED SALEEM</h1>
@@ -40,7 +40,7 @@ export default function Login(){
                <div className='flex  flex-col w-full h-full mt-5'>
                 <div className='flex gap-1 mb-5 flex-row self-center'>
               
-                <img src={hos} className=" w-20 h-20 items-center" />
+                <img src={hos} className=" w-20 h-20 items-center" alt='fail to load' />
               
                 <h2  className="text-xl font-serif text-[#00008B] mt-7">SABEER CLINIC</h2>
                 </div>

@@ -1,19 +1,15 @@
-import React, { Component, useContext, useState,useRef } from "react";
+import React, {useState,useRef } from "react";
 import { db, logout } from "../../firebase";
-import { UserContext } from "../../context";
 import backgroundImage from "../../assets/background.jpg";
 import pro from "../../assets/prof.png";
-import hos from "../../assets/hos.jpeg";
-import { FaSignOutAlt, FaHospital } from "react-icons/fa";
+import { FaSignOutAlt} from "react-icons/fa";
 import { LiaHospitalAltSolid } from "react-icons/lia";
 import { BiSolidMessageSquareAdd } from "react-icons/bi";
 import { PiUserList } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
-import { setDoc, doc, getDocs, collection, addDoc } from "firebase/firestore";
-
+import { setDoc,collection, addDoc } from "firebase/firestore";
 import Webcam from 'react-webcam';
 import { getStorage, ref, uploadString, getDownloadURL } from 'firebase/storage';
-import { initializeApp } from 'firebase/app';
 import LoadingIndicator from "../Loading";
 
 export default function AddPatient() {
