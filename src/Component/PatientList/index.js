@@ -71,7 +71,7 @@ export default function List() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
       className="w-full h-screen bg-cover absolute"
     >
-      <div className="block md:max-w-[80%] h-[75%] sm:w-[90%] lg:w-[70%]  bg-white border border-gray-200 rounded-2xl shadow  m-auto mt-20">
+      <div className="block w-full h-screen  lg:w-[70%]  bg-white border border-gray-200 rounded-2xl shadow  m-auto mt-0 lg:mt-20">
         <div className="flex flex-row h-full">
           <div className="min-w-[20%] h-full rounded-l-2xl bg-[#BCD5F3] flex flex-col">
             <div className="w-full h-[20%] rounded-tl-2xl bg-[#0000FF]">

@@ -65,7 +65,7 @@ export default function Diagnosis() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
       className="w-full h-screen bg-cover absolute"
     >
-      <div className="block max-w-[70%] h-[75%] min-w-[70%]  bg-white border border-gray-200 rounded-2xl shadow  m-auto mt-20  ">
+      <div className="block w-full h-screen lg:w-[75%]   bg-white border border-gray-200 rounded-2xl shadow  m-auto mt-0 lg:mt-20">
         <div className="flex flex-row h-full">
           <div className="min-w-[20%] h-full rounded-l-2xl bg-[#BCD5F3] flex flex-col m-auto">
             <div className="w-full h-[20%] rounded-tl-2xl bg-[#0000FF]">
@@ -120,7 +120,7 @@ export default function Diagnosis() {
               </h1>
             </div>
             {/* code here */}
-            <div className="max-w-[85%] h-[75%] rounded-2xl bg-[#BCD5F3] ml-14 mt-6">
+            <div className="max-w-[85%] h-[75%] rounded-2xl bg-[#BCD5F3] ml-14 mt-6 pr-5 pb-5 overflow-auto">
               <div className="flex flex-row gap-14">
                 <div className="min-w-[35%]">
                   <div className="flex flex-col gap-3 mt-4">
